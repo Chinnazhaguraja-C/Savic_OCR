@@ -1,0 +1,200 @@
+
+
+
+
+.result-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 56px;
+    height: 80%;
+}
+
+.image {
+    width: 100%;
+    height: 13.75rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--sfTile_BorderCornerRadius);
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.image p {
+    position: absolute;
+    bottom: 100px;
+    left: 70px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-weight: bold;
+}
+
+.data {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.paragraph, .paragraph-fail {
+    max-width: 300px;
+    width: 100%;
+    padding: 30px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 18px;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.success p {
+    display: flex;
+    flex-direction: row;
+}
+
+.failed-list, .success-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.failed-list li, .success-list li {
+    margin-bottom: 5px;
+}
+
+.success {
+    margin-right: 21%;
+}
+
+.fail {
+    margin-right: 14%;
+}
+
+.span-container {
+    margin-top: 10%;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+ul {
+    margin-top: 10%;
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: #555;
+    margin-top: 5px;
+}
+
+table {
+    width: 135%;
+    border-collapse: collapse;
+    margin-top: -59%;
+    margin-left: -18%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #CAF4FF;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+tr.success {
+    background-color: #dff0d8;
+}
+
+tr.fail {
+    background-color: #f2dede;
+}
+
+/* Responsive styles for tablets and below */
+@media (max-width: 768px) {
+    .logo img {
+        width: 120px; /* Adjusted width for logo on tablets */
+    }
+
+    .result-container {
+        padding: 15px; /* Reduced padding for result container */
+    }
+
+    .image p {
+        font-size: 1.2rem;
+        bottom: 80px;
+        left: 50px; /* Adjusted position of text within the image */
+    }
+
+    .paragraph, .paragraph-fail {
+        padding: 20px;
+        font-size: 16px; /* Adjusted padding and font size for paragraphs */
+    }
+
+    .data {
+        flex-direction: column;
+        align-items: flex-start; /* Stack data vertically */
+    }
+
+    .success, .fail {
+        margin-right: 0;
+        margin-bottom: 20px; /* Adjusted margins for success and fail blocks */
+    }
+
+    .success p {
+        flex-direction: column; /* Stacked paragraphs in success block */
+    }
+}
+
+/* Responsive styles for mobile phones */
+@media (max-width: 480px) {
+    .logo img {
+        width: 100px; /* Further reduced width for logo on smaller screens */
+    }
+
+    .image {
+        height: 10rem; /* Reduced height for image container */
+    }
+
+    .image p {
+        font-size: 1rem;
+        bottom: 60px;
+        left: 30px; /* Adjusted position of text within the image */
+    }
+
+    .paragraph, .paragraph-fail {
+        padding: 15px;
+        font-size: 14px; /* Further reduced padding and font size for paragraphs */
+    }
+
+    .data {
+        align-items: stretch; /* Stretch items in data block */
+    }
+
+    th, td {
+        padding: 6px; /* Reduced padding for table cells */
+    }
+}

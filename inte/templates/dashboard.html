@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Result</title>
+    <link rel="stylesheet" href="static/dashboard.css">
+    <link rel="shortcut icon" href="https://savictech.com/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="https://savictech.com/img/apple-touch-icon.png">
+</head>
+<body>
+    
+   
+    <div class="result-container">
+        <div class="image">
+            <img src="static/Nature.jpg" alt="Nature">
+            <p>OCR Dashboard</p>
+        </div>
+        <div class="data">
+            <div class="paragraph">
+                <p>Total Invoices Processed</p>
+                <div class="span-container">
+                    <span>{{ total_invoices_loaded }}</span>
+                </div>
+            </div>
+            <div class="paragraph">
+                <p>Successful Insertions</p>
+                <div class="span-container">
+                    <span>{{ successful_pushed_invoices }}</span>
+                </div>
+            </div>
+            <div class="paragraph-fail">
+                <p>Failed Insertions</p>
+                <div class="span-container">
+                    <span>{{ failed_invoices_count }}</span>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Table for displaying successful and failed invoices -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Successful invoices -->
+                {% for invoice in Successful_Invoices %}
+                <tr class="success">
+                    <td>Successful</td>
+                    <td>{{ invoice.name }}</td>
+                    <td>{{ invoice.timestamp|date:"d-m-y" }}</td>
+                    <td>{{ invoice.timestamp|date:"H:i:s" }}</td>
+                </tr>
+                {% endfor %}
+                <!-- Failed invoices -->
+                {% for invoice in Failed_Invoices %}
+                <tr class="fail">
+                    <td>Failed</td>
+                    <td>{{ invoice.name }}</td>
+                    <td>{{ invoice.timestamp|date:"d-m-y" }}</td>
+                    <td>{{ invoice.timestamp|date:"H:i:s" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+ 

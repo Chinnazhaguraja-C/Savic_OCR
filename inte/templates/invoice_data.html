@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Data</title>
+    <link rel="stylesheet" href="static/invoice_data.css">
+    <link rel="shortcut icon" href="https://savictech.com/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="https://savictech.com/img/apple-touch-icon.png"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <style>
+        .file-title {
+    font-size: 1.6em;
+    color: #ffffff;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif; /* Or any modern font */
+    display: inline-block;
+}
+    </style>
+    {% comment %} <button class="back-button" onclick="window.history.back();"><i class="fas fa-arrow-left"></i> Back</button> {% endcomment %}
+    <div class="sidebar close">
+        {% comment %}
+        <div class="logo-container">
+            <img src="static/images/savic.png" alt="SAVIC Logo" class="logo">
+        </div>
+        {% endcomment %}
+        <ul class="nav-links">
+            <li>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Hand Written Invoice</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-collection'></i>
+                        <span class="link_name">Hand Written Invoice</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a onclick="window.location.href='upload.html'"><img src="static/images/multi.png"
+                                alt="Multi"> Multi Invoice</a></li>
+                    <li><a onclick="window.location.href='folder-upload.html'"><img src="static/images/folder.png"
+                                alt="folder"> Folder</a></li>
+                    <li><a onclick="window.location.href='drop-menu.html'"><img src="static/images/computer_12576904.png"
+                                alt="Dashboard"> Dashboard</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-book-alt'></i>
+                        <span class="link_name">Scanned Invoice</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a onclick="window.location.href='upload.html'"><img src="static/images/multi.png"
+                                alt="Multi"> Multi Invoice</a></li>
+                    <li><a onclick="window.location.href='folder-upload.html'"><img src="static/images/folder.png"
+                                alt="folder"> Folder</a></li>
+                    <li><a onclick="window.location.href='drop-menu.html'"><img src="static/images/computer_12576904.png"
+                                alt="Dashboard"> Dashboard</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-spreadsheet'></i>
+                        <span class="link_name" onclick="window.location.href='excel.html'">Excel Template Upload</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu'></i>
+            <h1> Extracted Invoice Data </h1>
+            <div class="user-menu">
+                <!-- <span class="username">
+                    <i class="bx bx-user-circle icon"></i>
+                    <span class="greeting">Hello, {{ user.name }}!</span>
+                </span>
+                <div class="dropdown-content">
+                    {% if user.is_authenticated %}
+                    <form id="logoutForm" action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <a href="{% url 'logout' %}" id="logoutBtn"><i class="bx bx-log-out"></i>Logout</a>
+                    </form>
+                    {% else %}
+                    <p>Please <a href="{% url 'login' %}">login</a> to access this page.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>  -->
+        <div class="col-lg-2 col-md-3 col-4 ">
+            <div class="menu-trigger">
+                <div class="d-flex align-items-center justify-content-center gap-3 userDesign" onclick="toggleMenu(event)">
+                    <img src="static/images/user.png" class="userLogo" alt="user logo" title="user logo"> 
+                    <i class='fas fa-angle-down fs-4'></i> 
+                </div>
+                <div class="menu" id="account-menu">
+                    <div class="menu-arrow"></div>
+                    <div class="d-flex justify-content-start align-items-center gap-3 userImageDesign" >
+                       
+                        <div class="userImage">
+                            <img src="static/images/avatar-01.jpg" class="" alt="Vendor Dashboard">
+                        </div> 
+                      
+                        <div class="pt-2">
+                            <h5 class="fs-6"> {{ user.name }}</h5>
+                            <h6 class="text-secondary f-6">{{ user.email }}</h6>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="divider"></div>
+    
+                    {% if user.is_authenticated %}
+                        <form id="logoutForm" action="{% url 'logout' %}" method="post">
+                        <div class="menu-item"  onclick="document.getElementById('logoutForm').submit();">
+                            <div class="menu-icon">+</div>Add another account
+                        </div>
+                         <!-- <div class="menu-item">
+                            <div class="menu-icon">⚙️</div>Settings
+                        </div>  -->
+                            {% csrf_token %}
+                            <div class="menu-item" onclick="document.getElementById('logoutForm').submit();">
+                                <div class="menu-icon">↩️</div>Logout
+                            </div>
+                        </form>
+                    {% else %}
+                        <p>Please <a href="{% url 'login' %}">login</a> to access this page.</p>
+                    {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        </div>
+      
+
+        <hr>
+
+        <div class="container">
+            {% for data in combined_data %}
+                <div class="invoice-section">
+                    <h3  class="file-title">File&nbsp;: {{ data.invoice_name }}</h3>
+                    {% for item in data.extracted_data %}
+                        {% for key, value in item.items %}
+                            {% if key != 'Items' %}
+                                <div class="detail">
+                                    <div class="label">{{ key }}</div> <p>:</p>
+                                    <div class="value"><span id="{{ key | slugify }}">{{ value }}</span></div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        {% if item.Items %}
+                            <table id="editableTable{{ forloop.counter }}">
+                                <thead>
+                                    <tr>
+                                        <th>ProductCode</th>
+                                        <th>Barcode</th>
+                                        <th>Description</th>
+                                        <th>Quantity</th>
+                                        <th>UnitPrice</th>
+                                        <th>Unit</th>
+                                        <th>Tax</th>
+                                        <th>TaxRate</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item_data in item.Items %}
+                                        <tr>
+                                            <td>{{ item_data.ProductCode }}</td>
+                                            <td>{{ item_data.Barcode }}</td>
+                                            <td>{{ item_data.Description }}</td>
+                                            <td contenteditable="true" oninput="updateAmount(this)">{{ item_data.Quantity }}</td>
+                                            <td contenteditable="true">{{ item_data.UnitPrice }}</td>
+                                            <td>{{ item_data.Unit }}</td>
+                                            <td>{{ item_data.Tax }}</td>
+                                            <td contenteditable="true" oninput="updateAmount(this)">{{ item_data.TaxRate }}</td>
+                                            <td class="amount">{{ item_data.Amount }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% endif %}
+                    {% endfor %}
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+    <div class="button-container">
+        <button class="edit-button" onclick="toggleEdit()">Edit Data</button>
+        <button class="save-button" onclick="saveData()" style="display: none;">Save</button>
+        <button class="print-button" onclick="printInvoice()">Print Invoice</button>
+        <button id="push-to-sap" class="sap-button">Push to SAP</button>
+    </div>
+
+<!-- Custom Alert Box -->
+<div id="custom-alert" class="custom-alert">
+    <button class="close-btn" onclick="closeAlert()">×</button>
+    <div id="alert-message">
+        <div id="success-count"></div>
+        <div id="error-count"></div>
+    </div>
+    <div class="alert-buttons">
+        <button id="show-dashboard-btn">Dashboard</button>
+        <button id="upload-files-btn">Upload</button>
+    </div>
+</div>
+
+      
+<!-- 
+   <footer id="footer">
+        <span>
+          © 2024,
+          <a href="http://www.savictech.com" target="_blank">savic technologies pvt. ltd.</a>
+          All Rights Reserved.
+        </span>
+      </footer>  -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement; // selecting main parent of arrow
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+
+        // Function to close sidebar if clicked outside of it
+        document.addEventListener("click", function(e) {
+            if (!sidebar.contains(e.target) && !sidebarBtn.contains(e.target)) {
+                sidebar.classList.add("close");
+            }
+        });
+
+
+        function toggleMenu(event) {
+            const menu = document.getElementById('account-menu');
+            menu.classList.toggle('show');
+        
+            // Close the menu when clicking outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.menu-trigger, .menu-trigger *')) {
+                    if (menu.classList.contains('show')) {
+                        menu.classList.remove('show');
+                    }
+                }
+            };
+        }
+
+
+
+        function printInvoice() {
+            window.print();
+        }
+        function toggleEdit() {
+    // Toggle non-table items
+    $('.detail').each(function() {
+        // Find the span inside the detail div and get its text value
+        var spanValue = $(this).find('.value span').text();
+        
+        // Create or update input fields with the current span value
+        var input = $(this).find('input[type="text"]');
+        if (input.length === 0) {
+            // If no input field exists, create one
+            input = $('<input type="text" style="display: none;">').appendTo($(this));
+        }
+        input.val(spanValue).show();
+        
+        // Hide the span
+        $(this).find('.value span').hide();
+    });
+
+    // Toggle table items
+    $('table').find('td').attr('contenteditable', true);
+
+    // Show the Save button
+    $('.save-button').show();
+}
+
+function saveData() {
+    // Save non-table items
+    $('input[type="text"]').each(function() {
+        $(this).closest('.detail').find('span').text($(this).val());
+        $(this).hide();
+    });
+    $('.value span').show();
+
+    // Save table items
+    $('table').find('td').attr('contenteditable', false);
+
+    // Hide the Save button
+    $('.save-button').hide();
+
+    // Show the save message
+    $('<div class="save-message">Data saved successfully!</div>').appendTo('body').css({
+        'position': 'fixed',
+        'top': '20px',
+        'right': '20px',
+        'padding': '10px 20px',
+        'background-color': '#4CAF50',
+        'color': 'white',
+        'border-radius': '5px',
+        'box-shadow': '0 0 10px rgba(0, 0, 0, 0.1)'
+    }).fadeIn(300).delay(2000).fadeOut(300);
+}
+
+document.getElementById('push-to-sap').addEventListener('click', function() {
+    let successCount = 0;
+    let errorCount = 0;
+    let totalRequests = $('.invoice-section').length;
+    let completedRequests = 0;
+
+    $('.invoice-section').each(function(index) {
+        let container = $(this);
+        let nonItemFieldsData = {};
+        container.find('.detail').each(function() {
+            let key = $(this).find('span').attr('id');
+            let value = $(this).find('span').text();
+            nonItemFieldsData[key] = value;
+        });
+
+        let dbData = {
+            "invoice_number": nonItemFieldsData["invoice-number"],
+            "purchase_order_number": nonItemFieldsData["purchase-order-number"],
+            "vendor_name": nonItemFieldsData["vendorname"]
+        };
+
+        let sapData = {
+            "ID": "1001",
+            "BODY": []
+        };
+
+        container.find('table tbody tr').each(function() {
+            let rowData = {};
+            $(this).find('td').each(function(index) {
+                let header = container.find('table thead th').eq(index).text();
+                rowData[header] = $(this).text();
+            });
+            sapData["BODY"].push({
+                "VEN_NAME": nonItemFieldsData["vendorname"],
+                "EBELN": nonItemFieldsData["purchase-order-number"],
+                "TXZ01": rowData["Description"],
+                "MENGE_PO": rowData["Quantity"],
+                "MENGE_GR": rowData["Quantity"]
+            });
+        });
+
+        let combinedData = {
+            dbData: dbData,
+            sapData: sapData
+        };
+
+        // Show animation for each invoice push
+        container.find('.animation').show();
+
+        $.ajax({
+            type: "POST",
+            url: "{% url 'push_to_sap' %}",
+            beforeSend: function(xhr, settings) {
+                xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+            },
+            data: JSON.stringify(combinedData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(response) {
+                container.find('.animation').hide();
+
+                if (response.status === "success") {
+                    successCount++;
+                    container.find('.response-message').text("Data pushed to SAP successfully.");
+                } else {
+                    errorCount++;
+                    container.find('.response-message').text("Failed to push data to SAP. Error: " + response.message);
+                }
+                completedRequests++;
+                if (completedRequests === totalRequests) {
+                    showCustomAlert(successCount, errorCount);
+                }
+            },
+            error: function(xhr, status, error) {
+                container.find('.animation').hide();
+                errorCount++;
+                container.find('.response-message').text("Failed to push data to SAP. Error: " + error);
+                completedRequests++;
+                if (completedRequests === totalRequests) {
+                    showCustomAlert(successCount, errorCount);
+                }
+            }
+        });
+    });
+});
+
+function showCustomAlert(successCount, errorCount) {
+    // Format the message and set it to the alert box
+    document.getElementById('success-count').innerText = "Total Success Count: " + successCount;
+    document.getElementById('error-count').innerText = "Total Error Count: " + errorCount;
+    document.getElementById('custom-alert').style.display = 'block';
+}
+
+function closeAlert() {
+    document.getElementById('custom-alert').style.display = 'none';
+}
+document.getElementById('show-dashboard-btn').addEventListener('click', function() {
+        window.location.href = 'drop-menu.html'; // Redirect to drop-menu.html
+    });
+
+document.getElementById('upload-files-btn').addEventListener('click', function() {
+        window.location.href = 'upload.html'; // Redirect to upload.html
+    });
+
+ 
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+
+
+function updateAmount(element) {
+    const row = element.parentElement;
+    const quantity = parseFloat(row.cells[3].innerText) || 0;
+    const unitPrice = parseFloat(row.cells[4].innerText) || 0;
+    const taxRate = parseFloat(row.cells[7].innerText) || 0;
+
+    const totalPriceBeforeTax = quantity * unitPrice;
+    const taxAmount = totalPriceBeforeTax * taxRate / 100;
+    const amount = totalPriceBeforeTax + taxAmount;
+
+    row.querySelector('.amount').innerText = amount.toFixed(2);
+}
+
+
+    </script>
+</body>
+</html>

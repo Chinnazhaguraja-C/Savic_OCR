@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../static/register.css">
+    <link rel="shortcut icon" href="https://savictech.com/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="https://savictech.com/img/apple-touch-icon.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .password-requirements {
+            color: red;
+            font-size: 14px;
+            margin-top: -25px;
+            display: none;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: -25px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="rightside">
+        <div class="login-container">
+            <span>Registration Form</span>
+            <div class="input">
+                <form id="registrationForm">
+                    {% csrf_token %}
+                    <input type="text" id="name" placeholder="Name" name="name" required><br>
+                    <input type="email" id="email" placeholder="Email" name="email" required><br>
+                    <input type="text" id="organization" placeholder="Organization" name="organization" required><br>
+                    <input type="password" id="password" placeholder="Password" name="password" required><br>
+                    <div class="password-requirements">
+                        Password must be at least 8 characters long and contain at least one letter and one number.
+                    </div>
+                    <input type="password" id="confirm_password" placeholder="Confirm Password" name="confirm_password" required><br>
+                    <div class="error-message" id="passwordError">Passwords do not match. Please try again.</div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+            <div class="sign">
+                Already have an account?&nbsp;
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+ 
+    <script>
+        $(document).ready(function() {
+            $('#password').on('focus', function() {
+                $('.password-requirements').show(); // Show password requirements message
+            }).on('input', function() {
+                var password = $(this).val();
+                if (password.length > 0) {
+                    $('.password-requirements').hide(); // Hide password requirements message when user starts typing
+                } else {
+                    $('.password-requirements').show(); // Show password requirements message if field is empty again
+                }
+            });
+
+            $('#registrationForm').on('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                var password = $('#password').val();
+                var confirm_password = $('#confirm_password').val();
+
+                // Password matching validation
+                if (password != confirm_password) {
+                    $('#passwordError').show(); // Show error message
+                    return;
+                } else {
+                    $('#passwordError').hide(); // Hide error message if passwords match
+                }
+
+                var formData = $(this).serialize(); // Serialize form data
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/register/',
+                    data: formData,
+                    success: function(response) {
+                        alert('Registration successful!');
+                        window.location.href = "/login.html"; // Redirect to login page
+                    },
+                    error: function(response) {
+                        alert('Registration failed. Please try again.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

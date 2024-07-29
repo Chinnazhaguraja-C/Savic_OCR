@@ -1,0 +1,99 @@
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP</title>
+    <link rel="stylesheet" href="static/verify-otp.css">
+    <link rel="shortcut icon" href="https://savictech.com/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="https://savictech.com/img/apple-touch-icon.png">
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="rightside">
+        <div class="login-container">
+            <div class="input" id="enterEmail">
+                <div>
+                    <input type="text" id="emailInput" placeholder="Enter Registered Email ID">
+                </div>
+                <div>
+                    <button onclick="generateOTP()">Generate OTP</button>
+                </div>
+            </div>
+            <div class="input hide" id="enterOTP">
+                <div>
+                    <input type="text" id="otpInput" placeholder="Enter OTP">
+                </div>
+                <div class="submit">
+                    <button type="button" class="btn btn-primary mt-3" onclick="verifyOTP()">Verify OTP</button>
+                </div>
+            </div>
+            <div class="backward">
+                <a href="login.html">&#11160; Back to Log In</a>
+            </div>
+        </div>
+    </div>
+    <div class="text">
+        <h1>
+            Savic: Design + Collaboration
+        </h1>
+        <p>
+            Savic is a virtual center where designers, developers, and all design parties can perform their duties in unison, achieving results at least 200% faster. Discover a seamless workflow with Savic today.
+        </p>
+    </div>
+    <footer id="footer">
+        <span>© 2024, <a href="http://www.savictech.com" target="_blank">savic technologies pvt. ltd.</a> All Rights Reserved.</span>
+    </footer>
+ 
+    <script>
+        function generateOTP() {
+            var email = document.getElementById('emailInput').value;
+ 
+            fetch('/request-otp/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    document.getElementById('enterEmail').classList.add('hide');
+                    document.getElementById('enterOTP').classList.remove('hide');
+                } else {
+                    alert('Error generating OTP.');
+                }
+            });
+        }
+ 
+        function verifyOTP() {
+            var email = document.getElementById('emailInput').value;
+            var otp = document.getElementById('otpInput').value;
+ 
+            fetch('/verify-otp/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email, otp: otp }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.verified) {
+                    window.location.href = 'forgot-password.html?email=' + encodeURIComponent(email);
+                } else {
+                    alert('Incorrect OTP. Please try again.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+ 

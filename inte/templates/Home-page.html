@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert PDF Editable Text with OCR Online</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://savictech.com/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="https://savictech.com/img/apple-touch-icon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/Home-page.css">
+
+    <!-- Web Fonts  -->
+    <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;display=swap"
+        rel="stylesheet" type="text/css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="static/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static/vendor/fontawesome-free/css/all.min.css"> 
+	<link rel="stylesheet" href="static/vendor/animate/animate.compat.css">
+	<link rel="stylesheet" href="static/vendor/simple-line-icons/css/simple-line-icons.min.css">
+	<link rel="stylesheet" href="static/vendor/owl.carousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="static/vendor/owl.carousel/assets/owl.toheme.default.min.css">
+	<link rel="stylesheet" href="static/vendor/magnific-popup/magnific-popup.min.css">
+
+	<!-- Theme CSS -->
+    {% comment %} <link rel="stylesheet" href="css/theme.css"> {% endcomment %}
+	{% comment %} <link rel="stylesheet" href="css/theme-elements.css"> {% endcomment %}
+	<link rel="stylesheet" href="static/css/theme-blog.css">
+	<link rel="stylesheet" href="static/css/theme-shop.css">
+	
+	<!-- Demo CSS -->
+	<link rel="stylesheet" href="static/css/demos/demo-finance.css">
+	
+	<!-- Skin CSS -->
+	<link id="skinCSS" rel="stylesheet" href="static/css/skins/skin-finance.css">
+	
+	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="static/css/custom.css">
+	
+	<!-- Head Libs -->
+	<script src="static/vendor/modernizr/modernizr.min.js"></script>
+
+
+    <!-- Head Libs -->
+	<script src="static/vendor/modernizr/modernizr.min.js"></script>
+
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42715764-11"></script>
+	<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-42715764-11');
+	</script>
+</head>
+
+<body>
+    <div class="header-container">
+        <nav class="nav-bar">
+            <img src="static/img/logo.png" alt="Logo" width="155" height="36">
+            <ul class="nav-column">
+                <li><a href="" class="nav-link">Home</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#solution" class="nav-link">Solutions</a></li>
+                <li><a href="#footer" class="nav-link">Contact</a></li>
+                <li style="margin-top: -3px;">
+                    <a href="#" class="nav-link" onclick="window.location.href='login.html'">
+                        <button>Log in</button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <section>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"  data-bs-interval="5000">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div class="carousel-inner">
+                        <!-- Carousel Slide 1 -->
+                        <div class="carousel-item active">
+                            <img src="static/img/savic-ocr-bannner-02.jpg" class="d-block w-100" alt="">
+                          <div class="carousel-caption">
+                                <h2>Transform Your PDFs with OCR</h2>
+                                <h1>Unlock Text from Your PDFs Efficiently</h1>  
+                            </div> 
+                        </div>
+                        <!-- Carousel Slide 2 -->
+                        <div class="carousel-item">
+                            <img src="static/img/savic-ocr-bannner-01.jpg" class="d-block w-100" alt="">
+                            <div class="carousel-caption left-align">
+                                <h1>Unlock PDF Text with OCR</h1>
+                                <h2>Transform Your PDFs into <br><span class="editable-text">Editable Text</span></h2>
+
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </a>
+
+                </div>
+                
+            <div class="Arrrow-nav">
+                <button type="button" role="presentation" class="Arrrow-prev" aria-label="Previous"></button>
+                <button type="button" role="presentation" class="Arrrow-next" aria-label="Next"></button>
+            </div>
+        </div>
+        <section>
+            <div class="slide-text">
+                <p style="font-family: Arial, Helvetica, sans-serif;">
+                    Unlock the potential of your documents with OCR technology. <br>
+                    Convert your PDFs into editable text effortlessly.
+                </p>
+                <div  class="get-btn delayed-animation"onclick="window.location.href='login.html'">Get Started</div>
+            </div>
+        </section>
+    </section>
+                
+    <section id="products" class="basic-step">
+        <div class="col text-center">
+            <h3 class="font-weight-bold text-color-default line-height-1 text-4 ls-0 mb-1"> Why OCR?</h3>
+            <h2 class="text-color-dark font-weight-bold text-8">3 BASIC STEPS</h2>
+        </div>
+        </div>
+
+        <div class="row process custom-process justify-content-center mt-4">
+            <div class="process-step col-md-9 col-lg-4 mb-5 mb-lg-4 appear-animation"
+                data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+                <div class="process-step-circle border-width-3 mb-3">
+                    <strong class="process-step-circle-content svg-fill-color-primary">
+                        <img width="58" height="58" src="static/img/icons/box.svg" alt="" data-icon
+                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-stroke-color-primary'}" />
+                    </strong>
+                </div>
+
+                <div class="process-step-content px-4">
+                    <h4 class="font-weight-bold text-6 pb-1 mb-2">Product</h4>
+                    <p class="text-3-5 text-color-dark mb-0">
+                        OCR products are software solutions designed to convert scanned documents or images containing
+                        text into editable and searchable text data.</p>
+                </div>
+            </div>
+            <div class="process-step col-md-9 col-lg-4 mb-5 mb-lg-4 appear-animation"
+                data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
+                <div class="process-step-circle border-width-3 mb-3">
+                    <strong class="process-step-circle-content svg-fill-color-primary">
+                        <img width="58" height="58" src="static/img/icons/box.svg" alt="" data-icon
+                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-stroke-color-primary'}" />
+                    </strong>
+                </div>
+
+                <div class="process-step-content px-4">
+                    <h4 class="font-weight-bold text-6 pb-1 mb-2">Process</h4>
+                    <p class="text-3-5 text-color-dark mb-0">OCR, or Optical Character Recognition, is a technology that
+                        enables the conversion of different types of documents,into searchable data. </p>
+                </div>
+            </div>
+            <div class="process-step col-md-9 col-lg-4 mb-5 mb-lg-4 appear-animation"
+                data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
+                <div class="process-step-circle border-width-3 mb-3">
+                    <strong class="process-step-circle-content svg-fill-color-primary">
+                        <img width="58" height="58" src="static/img/icons/box.svg" alt="" data-icon
+                            data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-stroke-color-primary'}" />
+                    </strong>
+                </div>
+
+                <div class="process-step-content px-4">
+                    <h4 class="font-weight-bold text-6 pb-1 mb-2">People</h4>
+                    <p class="text-3-5 text-color-dark mb-0">The OCR (Optical Character Recognition) process involves
+                        several steps to accurately convert scanned or photographed documents. </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+    <hr>
+
+
+
+
+
+    </div>
+
+    <section id="solution" style="margin: 20px 0;padding: 20px 0;">
+
+        <section style="margin: 20px 0;padding: 20px 0;">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-left ">
+                        <h2 class="typography-hero-headline text-12 mb-4 text-left" style="color:#000;font-family: Arial, Helvetica, sans-serif;">Parse your documents
+                        </h2>
+                       <p class="typography-section-copy text-9 mb-4 text-left mt-1" style="color:#000;font-family: Arial, Helvetica, sans-serif;line-height:1.2;">A "qualified partner
+                        OCR software analyzes the text in the document image and translates it into machine-readable text characters, allowing users to manipulate, edit, search, and store the content digitally.
+
+
+                        </p>
+                        <p class="text-color-dark typography-section-copy text-5-5 line-height-4" style="font-family: Arial, Helvetica, sans-serif;">Optical Character Recognition (OCR) is a technology that enables the conversion of different types of  <br> documents, such as scanned paper documents, PDF files, or images captured by a digital camera, into <br>  editable and searchable data.
+
+
+                        </p>
+
+
+
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="" class=" border-0 m-0 appear-animation" data-appear-animation="fadeIn"
+            style="margin-top: 50px;background-color:#fff;">
+            <div class="row">
+                <div class="col">
+                    <div class="tabs tabs-bottom tabs-center tabs-simple">
+
+
+
+                        <div class="tab-content">
+
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item"><a class="nav-link active" href="#tabsNavigationSimple1"
+                                        data-bs-toggle="tab"
+                                        style="font-family: Arial, Helvetica, sans-serif;">Financial & Accounting</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#tabsNavigationSimple2"
+                                        data-bs-toggle="tab" style="font-family: Arial, Helvetica, sans-serif;">Build
+                                        Your Own</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#tabsNavigationSimple3"
+                                        data-bs-toggle="tab" style="font-family: Arial, Helvetica, sans-serif;">Business
+                                        Documents</a></li>
+                            </ul>
+                            <div class="tab-pane active" id="tabsNavigationSimple1">
+                                <div class="text-left">
+                                    <div class="overflow-hidden mb-3">
+                                        <h3 class="text-color-dark typography-hero-headline text-transform-none line-height-1 text-10 mb-0 appear-animation text-center"
+                                            data-appear-animation="maskUp" data-appear-animation-delay="200"
+                                            style="font-family: Arial, Helvetica, sans-serif;">
+                                            Financial & Accounting</h3>
+                                    </div>
+                                    <div class="container container-xl-custom pb-5">
+                                        <div class="row justify-content-between py-5">
+                                            <div class="col-lg-5">
+                                                <div data-appear-animation="maskUp"><img src="static/img/invoice.jpg"
+                                                        alt="private cloud" width="380px"></div>
+                                            </div>
+                                            <div class="col-lg-7 mt-5 mt-lg-0 mb-5 mb-lg-0">
+                                                <p class="text-color-dark font text-5-5 line-height-4 appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="400"
+                                                    style="font-family: Arial, Helvetica, sans-serif;">Invoices</p>
+                                                <p class="text-3-5 typography-section-copy text-color-black  appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="200"> Extract important invoice data,
+                                                    then integrate with your accounting system or download as a
+                                                    spreadsheet. Pull data such as reference number, dates, totals or
+                                                    line items</p>
+                                                <br>
+                                                <p class="text-color-dark font text-5-5 line-height-4 appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="400"
+                                                    style="font-family: Arial, Helvetica, sans-serif;">Purchase Orders
+                                                </p>
+                                                <p class="text-3-5 typography-section-copy text-color-black  appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="200"> Automate the extraction of
+                                                    crucial invoice information, including reference numbers, dates,
+                                                    totals, and line items.</p>
+                                                <br>
+                                                <p class="text-color-dark font text-5-5 line-height-4 appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="400"
+                                                    style="font-family: Arial, Helvetica, sans-serif;">Bank Statements
+                                                </p>
+                                                <p class="text-3-5 typography-section-copy text-color-black  appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="200"> Extract important invoice data,
+                                                    then integrate with your accounting system or download as a
+                                                    spreadsheet. Pull data such as reference number, dates, totals or
+                                                    line items</p>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabsNavigationSimple2">
+                                <div class="text-left">
+                                    <div class="overflow-hidden mb-3">
+                                        <h3 class="text-color-dark typography-hero-headline text-transform-none line-height-1 text-10 mb-0 appear-animation text-center"
+                                            data-appear-animation="maskUp" data-appear-animation-delay="200"
+                                            style="font-family: Arial, Helvetica, sans-serif;">
+                                            Build Your Own</h3>
+                                    </div>
+                                    <div class="container container-xl-custom pb-5">
+                                        <div class="row justify-content-between py-5">
+                                            <div class="col-lg-5">
+                                                <div data-appear-animation="maskUp"><img
+                                                        src="static/img/build-your-own.jpg" alt="private cloud"
+                                                        width="380px"></div>
+                                            </div>
+                                            <div class="col-lg-7 mt-5 mt-lg-0 mb-5 mb-lg-0">
+                                                <p class="text-color-dark font text-5-5 line-height-4 appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="400"
+                                                    style="font-family: Arial, Helvetica, sans-serif;">
+                                                    Zonal OCR</p>
+                                                <p class="text-3-5 typography-section-copy text-color-black  appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="200"> Please use your cursor to draw a
+                                                    rectangular shape around the section of data you want to choose.</p>
+                                                <br>
+                                                <p class="text-color-dark font text-5-5 line-height-4 appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="400"
+                                                    style="font-family: Arial, Helvetica, sans-serif;">Extract Table
+                                                    Data</p>
+                                                <p class="text-3-5 typography-section-copy text-color-black  appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="200">Set the structure of rows and
+                                                    columns by moving the column separators to the desired positions.
+                                                </p>
+                                                <br>
+                                                <p class="text-color-dark font text-5-5 line-height-4 appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="400"
+                                                    style="font-family: Arial, Helvetica, sans-serif;">
+                                                    Scanned Image Preprocessing</p>
+                                                <p class="text-3-5 typography-section-copy text-color-black  appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="200"> Deskew images, remove scanning
+                                                    artifacts and other image imperfections.</p>
+
+                                                <br>
+
+                                                <p class="text-color-dark font text-5-5 line-height-4 appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="400"
+                                                    style="font-family: Arial, Helvetica, sans-serif;">
+                                                    Checkboxes & Radio Buttons</p>
+                                                <p class="text-3-5 typography-section-copy text-color-black  appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="200"> Form data responses are
+                                                    recognized and the responses extracted.</p>
+                                                <br>
+                                                <p class="text-color-dark font text-5-5 line-height-4 appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="400"
+                                                    style="font-family: Arial, Helvetica, sans-serif;">
+
+                                                    Barcode & QR Code Selection</p>
+                                                <p class="text-3-5 typography-section-copy text-color-black  appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="200">Process Barcode and QR-codes with
+                                                    the built-in scanner.</p>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane " id="tabsNavigationSimple3">
+                                <div class="text-left">
+                                    <div class="overflow-hidden mb-3">
+                                        <h3 class="text-color-dark typography-hero-headline text-transform-none line-height-1 text-10 mb-0 appear-animation text-center"
+                                            data-appear-animation="maskUp" data-appear-animation-delay="200"
+                                            style="font-family: Arial, Helvetica, sans-serif;">
+                                            Business Documents</h3>
+                                    </div>
+
+                                    <div class="container container-xl-custom pb-5">
+                                        <div class="row justify-content-between py-5">
+                                            <div class="col-lg-5">
+                                                <div data-appear-animation="maskUp"><img
+                                                        src="static/img/business-document.jpg" alt="private cloud"
+                                                        width="380px"></div>
+                                            </div>
+                                            <div class="col-lg-7 mt-5 mt-lg-0 mb-5 mb-lg-0">
+                                                <p class="text-color-dark font text-5-5 line-height-4 appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="400"
+                                                    style="font-family: Arial, Helvetica, sans-serif;">Contracts &
+                                                    Agreements</p>
+                                                <p class="text-3-5 typography-section-copy text-color-black  appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="200"> Extract recurring data from all
+                                                    types of legal agreements, such as rental & leasing contracts,
+                                                    warranty & insurance agreements or form based contracts.</p>
+                                                <br>
+                                                <p class="text-color-dark font text-5-5 line-height-4 appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="400"
+                                                    style="font-family: Arial, Helvetica, sans-serif;">HR Forms &
+                                                    Applications</p>
+                                                <p class="text-3-5 typography-section-copy text-color-black  appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="200">Summarize the key information
+                                                    found in various legal agreements, including rental and leasing
+                                                    contracts, warranties and insurance agreements, and standardized
+                                                    form contracts.</p>
+                                                <br>
+                                                <p class="text-color-dark font text-5-5 line-height-4 appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="400"
+                                                    style="font-family: Arial, Helvetica, sans-serif;">Shipping Orders &
+                                                    Delivery Notes</p>
+                                                <p class="text-3-5 typography-section-copy text-color-black  appear-animation"
+                                                    data-appear-animation="fadeInUpShorter"
+                                                    data-appear-animation-delay="200">Efficiently extract information
+                                                    from HR documents like enrollment forms, job applications, reports,
+                                                    feedback forms, payroll records, or any other HR-related documents,
+                                                    and transform it into a format that can be readily utilized for
+                                                    decision-making or other purposes.</p>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer" class="footer-reveal bg-light border-0 m-0">
+
+
+            <div class="footer-copyright bg-light m-0 pt-3-5 pb-5">
+                <div class="container">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-12 col-sm-auto text-center text-sm-start order-2 order-sm-1">
+                            <p class="text-3">SAVIC © 2024. All Rights Reserved.</p>
+                        </div>
+                        <div class="col-12 col-sm-auto order-1 order-sm-2 mb-2 mb-sm-0">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="text-color-dark text-color-hover-primary font-weight-semibold text-3 text-decoration-none px-3"
+                                    href="#" role="button" id="dropdownLanguage" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+
+                                    <i class="fas fa-angle-down ms-1"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-arrow-centered dropdown-menu-arrow-centered-style-2 min-width-0"
+                                    aria-labelledby="dropdownLanguage">
+
+                                </div>
+                                <ul class="social-icons social-icons-clean social-icons-icon-dark social-icons-medium border border-top-0 border-end-0 border-bottom-0 ps-3 ms-2 mb-0">
+                                    <li class="social-icons-facebook">
+                                        <a href="https://www.facebook.com/savictechnologies/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li class="social-icons-twitter">
+                                        <a href="https://x.com/savictechnology?mx=2" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li class="social-icons-linkedin">
+                                        <a href="https://in.linkedin.com/company/savicinc" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>
+
+
+
+
+
+
+<!-- Vendor -->
+<script data-cfasync="false"
+src="static/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+            
+<script src="static/vendor/plugins/js/plugins.min.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="static/js/theme.js"></script>
+
+<!-- Current Page Vendor and Views -->
+<script src="static/js/views/view.contact.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="static/js/theme.init.js"></script>
+
+
+        
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+
+        
+</body>
+
+
+</html>
+
+</section>
+</body>
+
+</html>
